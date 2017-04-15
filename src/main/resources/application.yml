@@ -1,0 +1,22 @@
+#debug: true
+
+#active profiles :: [dev|prod|stage|test]
+spring:
+  profiles:
+    active: dev
+
+#kafka
+kafka:
+  #metadata.broker.list: 192.168.0.100:32770
+  metadata.broker.list: 192.168.0.100:32768,192.168.0.100:32769,192.168.0.100:32770
+  zookeeper:
+    url: 192.168.0.100:2181
+    session.timeout.ms: 4000
+    sync.timeout.ms: 200
+  auto.commit.interval.ms: 1000
+  group.id: anypoint.tv.group
+  topic: bulk.msg.test.002
+
+
+#logging
+logging.config: classpath:logback.xml
